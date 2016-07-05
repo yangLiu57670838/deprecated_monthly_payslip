@@ -22,7 +22,7 @@ function beginCount() {
             if(($scope.fname) && ($scope.lname) && ($scope.annualSalary) && (parseInt($scope.superRate) <= 50) && (parseInt($scope.superRate) >= 0))
                 {
                     $scope.fullname = $scope.fname + ' ' + $scope.lname;
-                    $scope.endDate = moment($scope.startDate).add(29, 'day').format('DD MMMM');//adding four weeks, 29 days
+                    $scope.endDate = moment($scope.startDate).add(30, 'day').format('DD MMMM');//adding four weeks, 30 days
                     $scope.payPeriod = moment($scope.startDate).format('DD MMMM') + ' - ' + $scope.endDate;
                     $scope.grossIncome = Math.round(parseInt($scope.annualSalary) / 12).toLocaleString();//round, add comma
                      countIncomeTax(parseInt($scope.annualSalary)).then(function(d){
