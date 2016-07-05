@@ -19,7 +19,7 @@ function beginCount() {
     var promise = $timeout(function () {
             $scope.showSpinner = false;
             console.log('validating..');
-            if(($scope.fname) && ($scope.lname) && ($scope.annualSalary) && (parseInt($scope.superRate) <= 50) && (parseInt($scope.superRate) >= 0))
+            if(($scope.fname) && ($scope.lname) && ($scope.annualSalary) && (parseInt($scope.superRate) <= 50) && (parseInt($scope.superRate) >= 0) && ($scope.fname.indexOf('%') == -1) && ($scope.lname.indexOf('%') == -1) && ($scope.fname.indexOf('&') == -1) && ($scope.lname.indexOf('&') == -1))
                 {
                     $scope.fullname = $scope.fname + ' ' + $scope.lname;
                     $scope.endDate = moment($scope.startDate).add(30, 'day').format('DD MMMM');//adding four weeks, 30 days
